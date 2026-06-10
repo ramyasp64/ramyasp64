@@ -149,11 +149,11 @@ Full fraud detection system for real-world metered and unmetered taxi trips, pre
 ---
 
 **📄 [Fiddle Tour: Fraudulent Taxi Detection (KNN)](https://github.com/ramyasp64/fiddle-tour-knn)**  
-*Published · IJDRD Jan 2024 · Presented at ICADSIS May 2022*
+*Mini Project · National Engineering College · Feb 2022 · Published · Conference Presented*
 
-KNN-based classifier replacing a map-matching baseline for unmetered taxi fraud detection. Published in the International Journal of Novel Research and Development and presented at the ICADSIS International Virtual Conference.
+KNN-based classifier replacing a map-matching baseline for unmetered taxi fraud detection. Published in the International Journal of Novel Research and Development (Jan 2024) and presented at the ICADSIS International Virtual Conference (May 2022). Repository includes the full project report, published paper, and presentation slides.
 
-`Python` `KNN` `Scikit-learn` `NLTK`
+`Python` `KNN` `Scikit-learn` `NLTK` `Pickle` `Tkinter`
 
 ---
 
