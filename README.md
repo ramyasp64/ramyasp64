@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=0:0a2342,30:0077b6,65:00b4d8,100:90e0ef&height=200&section=header&text=Ramya%20Subramanian%20Porselva%20Bharathi&fontSize=30&fontColor=ffffff&desc=Building%20AI%20for%20the%20patients%20who%20need%20it%20most&descSize=17&descColor=ffffff&fontAlignY=44&descAlignY=66)
+![banner](https://raw.githubusercontent.com/ramyasp64/ramyasp64/main/banner.svg)
 
 ### Hi, I'm Ramya 👋
 
@@ -185,4 +185,4 @@ First-Class Distinction · CGPA 8.65/10 · Published research · Presented at IC
 
 *Vital signs monitoring for low-resource settings is not just possible. It is achievable.*
 
-![footer](https://capsule-render.vercel.app/api?type=waving&color=0:90e0ef,35:00b4d8,70:0077b6,100:0a2342&height=120&section=footer)
+![footer](https://raw.githubusercontent.com/ramyasp64/ramyasp64/main/footer.svg)

@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+  <defs>
+    <!-- Background gradient: sky blue to light cyan -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0077b6"/>
+      <stop offset="45%"  stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#90e0ef"/>
+    </linearGradient>
+
+    <!-- ECG glow filter -->
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Softer glow for pulse dot -->
+    <filter id="pulseglow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip path for ECG line so it animates left to right -->
+    <clipPath id="ecgclip">
+      <rect x="0" y="0" width="900" height="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="url(#bg)"/>
+
+  <!-- Subtle grid dots in background -->
+  <g opacity="0.07" fill="#64b5f6">
+    <circle cx="50"  cy="30"  r="1.2"/><circle cx="150" cy="30"  r="1.2"/><circle cx="250" cy="30"  r="1.2"/>
+    <circle cx="350" cy="30"  r="1.2"/><circle cx="450" cy="30"  r="1.2"/><circle cx="550" cy="30"  r="1.2"/>
+    <circle cx="650" cy="30"  r="1.2"/><circle cx="750" cy="30"  r="1.2"/><circle cx="850" cy="30"  r="1.2"/>
+    <circle cx="50"  cy="80"  r="1.2"/><circle cx="150" cy="80"  r="1.2"/><circle cx="250" cy="80"  r="1.2"/>
+    <circle cx="350" cy="80"  r="1.2"/><circle cx="450" cy="80"  r="1.2"/><circle cx="550" cy="80"  r="1.2"/>
+    <circle cx="650" cy="80"  r="1.2"/><circle cx="750" cy="80"  r="1.2"/><circle cx="850" cy="80"  r="1.2"/>
+    <circle cx="50"  cy="130" r="1.2"/><circle cx="150" cy="130" r="1.2"/><circle cx="250" cy="130" r="1.2"/>
+    <circle cx="350" cy="130" r="1.2"/><circle cx="450" cy="130" r="1.2"/><circle cx="550" cy="130" r="1.2"/>
+    <circle cx="650" cy="130" r="1.2"/><circle cx="750" cy="130" r="1.2"/><circle cx="850" cy="130" r="1.2"/>
+    <circle cx="50"  cy="180" r="1.2"/><circle cx="150" cy="180" r="1.2"/><circle cx="250" cy="180" r="1.2"/>
+    <circle cx="350" cy="180" r="1.2"/><circle cx="450" cy="180" r="1.2"/><circle cx="550" cy="180" r="1.2"/>
+    <circle cx="650" cy="180" r="1.2"/><circle cx="750" cy="180" r="1.2"/><circle cx="850" cy="180" r="1.2"/>
+  </g>
+
+  <!-- ECG / vital sign waveform — spans full width, sits in lower half -->
+  <!--
+    ECG path: flat baseline with one full PQRST complex repeated twice, centered vertically at y=145
+    Coordinates hand-crafted for a clean clinical ECG shape.
+    Baseline y=145. P-wave rises to 130, QRS complex dips to 175 then spikes to 90, S back to 145, T-wave to 120.
+  -->
+  <g filter="url(#glow)" clip-path="url(#ecgclip)">
+    <!-- Trailing glow layer (thicker, lower opacity) -->
+    <polyline
+      points="
+        0,145
+        60,145
+        70,137 78,137 86,145
+        96,145
+        102,155 106,90 110,175 114,145
+        124,145
+        132,128 140,122 148,128 156,145
+        166,145
+        226,145
+        236,137 244,137 252,145
+        262,145
+        268,155 272,90 276,175 280,145
+        290,145
+        298,128 306,122 314,128 322,145
+        332,145
+        392,145
+        402,137 410,137 418,145
+        428,145
+        434,155 438,90 442,175 446,145
+        456,145
+        464,128 472,122 480,128 488,145
+        498,145
+        558,145
+        568,137 576,137 584,145
+        594,145
+        600,155 604,90 608,175 612,145
+        622,145
+        630,128 638,122 646,128 654,145
+        664,145
+        724,145
+        734,137 742,137 750,145
+        760,145
+        766,155 770,90 774,175 778,145
+        788,145
+        796,128 804,122 812,128 820,145
+        830,145
+        900,145
+      "
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="4"
+      stroke-opacity="0.18"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Main ECG line -->
+    <polyline
+      points="
+        0,145
+        60,145
+        70,137 78,137 86,145
+        96,145
+        102,155 106,90 110,175 114,145
+        124,145
+        132,128 140,122 148,128 156,145
+        166,145
+        226,145
+        236,137 244,137 252,145
+        262,145
+        268,155 272,90 276,175 280,145
+        290,145
+        298,128 306,122 314,128 322,145
+        332,145
+        392,145
+        402,137 410,137 418,145
+        428,145
+        434,155 438,90 442,175 446,145
+        456,145
+        464,128 472,122 480,128 488,145
+        498,145
+        558,145
+        568,137 576,137 584,145
+        594,145
+        600,155 604,90 608,175 612,145
+        622,145
+        630,128 638,122 646,128 654,145
+        664,145
+        724,145
+        734,137 742,137 750,145
+        760,145
+        766,155 770,90 774,175 778,145
+        788,145
+        796,128 804,122 812,128 820,145
+        830,145
+        900,145
+      "
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Animated pulse dot that travels along the baseline -->
+  <circle r="5" fill="#ffffff" filter="url(#pulseglow)" opacity="0.9">
+    <animateMotion
+      dur="4s"
+      repeatCount="indefinite"
+      path="M0,145 L60,145 L70,137 L78,137 L86,145 L96,145 L102,155 L106,90 L110,175 L114,145 L124,145 L132,128 L140,122 L148,128 L156,145 L166,145 L226,145 L236,137 L244,137 L252,145 L262,145 L268,155 L272,90 L276,175 L280,145 L290,145 L298,128 L306,122 L314,128 L322,145 L332,145 L392,145 L402,137 L410,137 L418,145 L428,145 L434,155 L438,90 L442,175 L446,145 L456,145 L464,128 L472,122 L480,128 L488,145 L498,145 L558,145 L568,137 L576,137 L584,145 L594,145 L600,155 L604,90 L608,175 L612,145 L622,145 L630,128 L638,122 L646,128 L654,145 L664,145 L724,145 L734,137 L742,137 L750,145 L760,145 L766,155 L770,90 L774,175 L778,145 L788,145 L796,128 L804,122 L812,128 L820,145 L830,145 L900,145"
+    />
+  </circle>
+
+  <!-- Divider line above text -->
+  <line x1="0" y1="95" x2="900" y2="95" stroke="#1e88e5" stroke-width="0.4" opacity="0.3"/>
+
+  <!-- Name -->
+  <text
+    x="450" y="42"
+    font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+    font-size="28"
+    font-weight="700"
+    fill="#ffffff"
+    text-anchor="middle"
+    letter-spacing="0.5"
+  >Ramya Subramanian Porselva Bharathi</text>
+
+  <!-- Tagline -->
+  <text
+    x="450" y="68"
+    font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+    font-size="14"
+    font-weight="400"
+    fill="#a8d8ea"
+    text-anchor="middle"
+    letter-spacing="0.8"
+  >Building AI for the patients who need it most</text>
+
+  <!-- Bottom wave shape -->
+  <path d="M0,185 Q225,170 450,185 Q675,200 900,185 L900,200 L0,200 Z" fill="#023e8a" opacity="0.35"/>
+</svg>
