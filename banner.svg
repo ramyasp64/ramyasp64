@@ -1,93 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200" role="img"
-     aria-label="Ramya Subramanian Porselva Bharathi — Sustainable Healthcare Robotics">
+     aria-label="Ramya Subramanian Porselva Bharathi, Sustainable Healthcare Robotics">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#062b45"/>
-      <stop offset="48%"  stop-color="#0f6f8c"/>
-      <stop offset="100%" stop-color="#1fa88f"/>
+      <stop offset="0%"   stop-color="#0077b6"/>
+      <stop offset="45%"  stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#90e0ef"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-80%" width="140%" height="260%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="soft" x="-150%" y="-150%" width="400%" height="400%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3.4" result="b"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
   <rect width="900" height="200" fill="url(#bg)"/>
 
-  <!-- ================= text zone: y 0-128, kept clear of the graphic ============== -->
-  <text x="450" y="52" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+  <!-- text zone, kept clear of the graphic band below -->
+  <text x="450" y="54" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
         font-size="30" font-weight="700" fill="#ffffff" letter-spacing="0.3">
     Ramya Subramanian Porselva Bharathi
   </text>
 
-  <text x="450" y="80" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-        font-size="13" font-weight="600" fill="#9ff0dc" letter-spacing="2.2">
+  <text x="450" y="82" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="13" font-weight="600" fill="#eaf9ff" letter-spacing="2.2">
     SUSTAINABLE HEALTHCARE ROBOTICS
   </text>
 
-  <text x="450" y="101" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-        font-size="11.5" fill="#cfeef2" fill-opacity="0.85" letter-spacing="0.8">
-    Physical AI  ·  Medical Signal Processing  ·  M.S. Web and Data Science, Universität Koblenz
+  <text x="450" y="104" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="12" fill="#f2fcff" fill-opacity="0.95" letter-spacing="0.5">
+    Autonomous robots for patient monitoring in low-resource clinics
   </text>
 
-  <text x="450" y="122" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-        font-size="12" font-style="italic" fill="#eaffff" fill-opacity="0.72">
-    Robots that carry care to the patients who are furthest from it
+  <text x="450" y="125" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="11.5" fill="#e6f7ff" fill-opacity="0.8">
+    ROS 2  ·  SLAM  ·  Nav2  ·  Physical AI  ·  M.S. Web and Data Science, Universität Koblenz
   </text>
 
-  <!-- ================= graphic zone: y 140-200, no text crosses it ================ -->
-  <!-- floor grid -->
-  <g stroke="#ffffff" stroke-opacity="0.055" stroke-width="1">
+  <!-- graphic band: a vital sign becoming a path to a bedside -->
+  <g stroke="#0077b6" stroke-opacity="0.13" stroke-width="1">
     <path d="M0 158 H900 M0 176 H900 M0 194 H900"/>
     <path d="M150 142 V200 M300 142 V200 M450 142 V200 M600 142 V200 M750 142 V200"/>
   </g>
 
-  <!--
-    The idea of the whole portfolio, drawn once: a vital-sign waveform on the
-    left resolves into a planned trajectory on the right, ending at a bedside
-    where an alert is raised. Perception becoming action.
-  -->
-  <path d="M56 170 H150 l9 -3 7 5 8 -24 9 45 8 -23 7 3 h24 l8 -2 6 4 7 -15 8 27 7 -15 6 2 H400"
-        fill="none" stroke="#eaffff" stroke-opacity="0.9" stroke-width="2.3"
+  <path d="M52 170 H130 l8 -3 6 5 7 -24 8 45 7 -23 6 3 h20 l7 -2 5 4 6 -15 7 27 6 -15 5 2 H340"
+        fill="none" stroke="#ffffff" stroke-opacity="0.95" stroke-width="2.4"
         stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
 
-  <path d="M400 170 C 470 170, 500 162, 560 158 C 620 154, 660 152, 706 150"
-        fill="none" stroke="#8ff3dd" stroke-opacity="0.8" stroke-width="2.2"
+  <path d="M340 170 C 400 170, 430 163, 480 159 C 530 155, 560 153, 592 151"
+        fill="none" stroke="#e8fbff" stroke-opacity="0.95" stroke-width="2.4"
         stroke-linecap="round" stroke-dasharray="1 6.5"/>
 
-  <!-- the rover, mid-drive -->
-  <g transform="translate(706 150)">
-    <rect x="-12" y="-7" width="24" height="12" rx="2.6" fill="#eaffff" fill-opacity="0.95"/>
-    <rect x="-1.8" y="-13" width="3.6" height="7" rx="1.2" fill="#eaffff" fill-opacity="0.9"/>
-    <circle cx="-6.5" cy="7" r="3" fill="#062b45" fill-opacity="0.9"/>
-    <circle cx="6.5"  cy="7" r="3" fill="#062b45" fill-opacity="0.9"/>
-    <path d="M15 -1 h11" stroke="#8ff3dd" stroke-width="2" stroke-linecap="round"/>
-    <path d="M22 -5 l4.5 4 -4.5 4" fill="none" stroke="#8ff3dd" stroke-width="2"
+  <g transform="translate(592 151)">
+    <rect x="-12" y="-7" width="24" height="12" rx="2.6" fill="#ffffff" fill-opacity="0.97"/>
+    <rect x="-1.8" y="-13" width="3.6" height="7" rx="1.2" fill="#ffffff" fill-opacity="0.92"/>
+    <circle cx="-6.5" cy="7" r="3" fill="#0077b6"/>
+    <circle cx="6.5"  cy="7" r="3" fill="#0077b6"/>
+    <path d="M15 -1 h11" stroke="#03557f" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
+    <path d="M22 -5 l4.5 4 -4.5 4" fill="none" stroke="#03557f" stroke-opacity="0.8" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <!-- the bedside it is driving to, with the alert raised above it -->
-  <g transform="translate(772 143)">
-    <rect x="0" y="0" width="46" height="12" rx="2.4" fill="#ffffff" fill-opacity="0.15"
-          stroke="#eaffff" stroke-opacity="0.55" stroke-width="1.1"/>
-    <rect x="0" y="-6" width="7" height="6" rx="1.4" fill="#eaffff" fill-opacity="0.45"/>
-    <circle cx="23" cy="-15" r="4" fill="#ff6b6b" filter="url(#soft)"/>
+  <g transform="translate(652 150)">
+    <rect x="0" y="0" width="46" height="12" rx="2.4" fill="#0077b6" fill-opacity="0.30"
+          stroke="#03557f" stroke-opacity="0.85" stroke-width="1.4"/>
+    <rect x="0" y="-6" width="7" height="6" rx="1.4" fill="#03557f" fill-opacity="0.7"/>
+    <circle cx="23" cy="-11" r="4.4" fill="#e63946" filter="url(#soft)"/>
   </g>
 
-  <text x="56" y="192" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-        font-size="9.5" fill="#eaffff" fill-opacity="0.42" letter-spacing="1.1">
-    SIGNAL
-  </text>
-  <text x="450" y="192" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-        font-size="9.5" fill="#eaffff" fill-opacity="0.42" letter-spacing="1.1">
-    DECISION
-  </text>
-  <text x="844" y="192" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-        font-size="9.5" fill="#eaffff" fill-opacity="0.42" letter-spacing="1.1">
-    ACTION
-  </text>
+  <text x="52" y="192" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#ffffff" fill-opacity="0.7" letter-spacing="1.1">SIGNAL</text>
+  <text x="400" y="192" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#eaf9ff" fill-opacity="0.85" letter-spacing="1.1">DECISION</text>
+  <text x="740" y="192" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#03557f" fill-opacity="0.75" letter-spacing="1.1">ACTION</text>
 </svg>

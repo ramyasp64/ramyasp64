@@ -2,11 +2,11 @@
 
 ### Hi, I'm Ramya 👋
 
-I'm an M.S. student in Web and Data Science at Universität Koblenz, working toward a research career in **sustainable healthcare robotics** — physical AI systems that carry care to the patients who are furthest from it.
+I'm an M.S. student in Web and Data Science at Universität Koblenz. I work on **sustainable healthcare robotics**: autonomous robots for patient monitoring in low-resource clinics.
 
-My work has one throughline: a model that notices a patient deteriorating is only useful if somebody is there to act on it. In an understaffed ward that assumption quietly fails, and it fails hardest for people who already have the least. So I build both halves — the perception, and the body that acts on it.
+A model that detects a patient deteriorating is only useful if someone is there to act on it. In a ward with one nurse and forty beds, that is often not the case. So I build both parts: the model that detects the problem, and the robot that responds to it.
 
-**[MediSense](https://github.com/ramyasp64/MediSense)** is the perception half: an independent research prototype testing whether a model trained on industrial sensor degradation can transfer to clinical vital signs monitoring. **[MediSense-Rover](https://github.com/ramyasp64/MediSense-Rover)** is the body: a ROS 2 robot that maps a ward, localises itself, and drives to the bedside on its own when the alert turns red. Perception, decision, action, closed into one loop.
+**[MediSense](https://github.com/ramyasp64/MediSense)** is the detection side. It tests whether a model trained on industrial sensor degradation can transfer to clinical vital signs monitoring. **[MediSense-Rover](https://github.com/ramyasp64/MediSense-Rover)** is the response side. It is a ROS 2 robot that maps a ward, tracks its own position, and drives to the bedside on its own when an alert is raised.
 
 My path into this started with my university's R&D research internship, where I worked on 3D point cloud anomaly detection for manufacturing quality control. That project is what made the connection clear: the way industrial sensors degrade and the way vital signs deteriorate follow surprisingly similar patterns. That observation became MediSense.
 
@@ -18,9 +18,9 @@ I'm looking for a **paid research or thesis position** in robotics, physical AI,
 
 ### 🔬 What I'm working on
 
-**[MediSense-Rover](https://github.com/ramyasp64/MediSense-Rover)**: an autonomous monitoring and response robot for clinical wards — ROS 2 Jazzy, SLAM, Nav2, simulation-first. A recorded ICU waveform at 163 BPM raises a clinical alert, and the robot drives itself to that bed, arriving within 0.17 m.
+**[MediSense-Rover](https://github.com/ramyasp64/MediSense-Rover)**: an autonomous monitoring and response robot for clinical wards, built in ROS 2 Jazzy with SLAM and Nav2. A recorded ICU waveform at 163 BPM raises a clinical alert, and the robot drives itself to that bed, arriving within 0.17 m.
 
-**[MediSense](https://github.com/ramyasp64/MediSense)**: independent research on transfer learning from industrial sensors to clinical vital signs monitoring — the model the rover carries.
+**[MediSense](https://github.com/ramyasp64/MediSense)**: research on transfer learning from industrial sensors to clinical vital signs monitoring. This is the model the rover carries.
 
 ---
 
@@ -70,13 +70,13 @@ I'm looking for a **paid research or thesis position** in robotics, physical AI,
 **🤖 [MediSense-Rover: An Autonomous Monitoring and Response Robot](https://github.com/ramyasp64/MediSense-Rover)**  
 *Independent research · ROS 2 Jazzy · 2026*
 
-A monitoring model is only useful if someone acts on what it notices. This robot closes that loop. It maps a four-bed ward with SLAM, localises itself with AMCL, and when a patient's waveform produces a sustained red alert it plans a path and drives to that bedside on its own.
+This robot maps a four-bed ward using SLAM, tracks its own position with AMCL, and plans its own route with Nav2. When a patient's waveform produces a sustained red alert, it drives to that bedside without anyone controlling it.
 
-Built simulation-first with no hardware purchased — the same constraint the intended deployment has. It carries the MediSense model unmodified, mounted read-only, and adds the perception → decision → action loop around it.
+Built entirely in simulation with no hardware purchased, which is the same budget constraint the intended deployment has. It carries the MediSense model unmodified, mounted read-only, and adds the perception, decision and action loop around it.
 
-Measured, not asserted: **0.17 m** arrival accuracy against ground truth, **16 s** from alert to bedside, **zero** recovery behaviours. SLAM closes a full ward lap to **1 mm / 25 mm**. Inference runs at **p99 61–70 ms** against a 100 ms budget, on **16,530 parameters and 64.6 KiB of weights**, occupying **0.05% of one core**.
+All figures are measured against the simulator's ground truth rather than the robot's own reports: **0.17 m** arrival accuracy, **16 s** from alert to bedside, and **zero** recovery behaviours. SLAM closes a full ward lap to within **1 mm and 25 mm**. Inference runs at **p99 61 to 70 ms** against a 100 ms budget, on **16,530 parameters and 64.6 KiB of weights**, using **0.05% of one CPU core**.
 
-Two independent detectors run side by side and the more severe wins — a learned autoencoder for equipment faults, and clinical vital-sign rules that cannot miss a heart rate of 163. Every alert records which one fired, so the decision stays auditable rather than magic. The README states plainly which detector is currently weak and why.
+Two independent detectors run side by side and the more severe result wins. One is a learned autoencoder for equipment faults, the other is a set of clinical vital-sign rules that cannot miss a heart rate of 163. Every alert records which detector fired, so the decision can be audited. The README also states which of the two is currently weak, and why.
 
 `ROS 2 Jazzy` · `Gazebo Harmonic` · `Nav2` · `slam_toolbox` · `TF2` · `URDF/SDF` · `rclpy` · `PyTorch` · `Docker`
 
@@ -141,7 +141,7 @@ Retail analytics for REWE Group covering loyalty programs, regional organic sale
 ---
 
 **🌀 [Storm Prediction Dashboard](https://github.com/ramyasp64/storm-prediction-dashboard)**  
-*Solartis Hackathon · Dec 2020 – Jan 2021*
+*Solartis Hackathon · Dec 2020 to Jan 2021*
 
 Real-time geospatial storm risk tool built for insurance underwriting decisions during a hackathon.
 
