@@ -2,25 +2,39 @@
 
 ### Hi, I'm Ramya 👋
 
-I'm an M.S. student in Web and Data Science at Universität Koblenz, working toward a research career in healthcare AI and medical signal processing.
+I'm an M.S. student in Web and Data Science at Universität Koblenz, working toward a research career in **sustainable healthcare robotics** — physical AI systems that carry care to the patients who are furthest from it.
 
-Right now I'm building **[MediSense](https://github.com/ramyasp64/MediSense)**, an independent research prototype that tests whether a model trained on industrial sensor degradation can transfer to clinical vital signs monitoring. The patients who need continuous monitoring most are often the furthest from it, and that gap feels worth trying to close.
+My work has one throughline: a model that notices a patient deteriorating is only useful if somebody is there to act on it. In an understaffed ward that assumption quietly fails, and it fails hardest for people who already have the least. So I build both halves — the perception, and the body that acts on it.
+
+**[MediSense](https://github.com/ramyasp64/MediSense)** is the perception half: an independent research prototype testing whether a model trained on industrial sensor degradation can transfer to clinical vital signs monitoring. **[MediSense-Rover](https://github.com/ramyasp64/MediSense-Rover)** is the body: a ROS 2 robot that maps a ward, localises itself, and drives to the bedside on its own when the alert turns red. Perception, decision, action, closed into one loop.
 
 My path into this started with my university's R&D research internship, where I worked on 3D point cloud anomaly detection for manufacturing quality control. That project is what made the connection clear: the way industrial sensors degrade and the way vital signs deteriorate follow surprisingly similar patterns. That observation became MediSense.
 
 Before the Master's, I spent two years at Kumaran Systems as an ETL Developer, building and owning pipelines for CIBC's Wholesale Credit Data Warehouse (one of Canada's Big Five banks). 300+ tables, billions of records, 7 pipelines built from scratch, 75+ requirements delivered with zero escalations. I'm grateful for that experience. It taught me what it really means to own something.
 
-I'm looking for a **paid research or thesis position** in healthcare AI, medical signal processing, or applied ML.
+I'm looking for a **paid research or thesis position** in robotics, physical AI, healthcare robotics, or applied ML.
 
 ---
 
 ### 🔬 What I'm working on
 
-**[MediSense](https://github.com/ramyasp64/MediSense)**: independent research on transfer learning from industrial sensors to clinical vital signs monitoring
+**[MediSense-Rover](https://github.com/ramyasp64/MediSense-Rover)**: an autonomous monitoring and response robot for clinical wards — ROS 2 Jazzy, SLAM, Nav2, simulation-first. A recorded ICU waveform at 163 BPM raises a clinical alert, and the robot drives itself to that bed, arriving within 0.17 m.
+
+**[MediSense](https://github.com/ramyasp64/MediSense)**: independent research on transfer learning from industrial sensors to clinical vital signs monitoring — the model the rover carries.
 
 ---
 
 ### 🛠 Skills
+
+**Robotics and Physical AI**  
+![ROS 2](https://img.shields.io/badge/ROS%202%20Jazzy-22314E?style=flat-square&logo=ros&logoColor=white)
+![Gazebo](https://img.shields.io/badge/Gazebo%20Harmonic-FF6C37?style=flat-square)
+![Nav2](https://img.shields.io/badge/Nav2-Navigation%20Stack-2E7D32?style=flat-square)
+![SLAM](https://img.shields.io/badge/SLAM-slam__toolbox-1565C0?style=flat-square)
+![URDF](https://img.shields.io/badge/URDF%20%2F%20SDF-Robot%20Description-546E7A?style=flat-square)
+![TF2](https://img.shields.io/badge/TF2-Transforms-455A64?style=flat-square)
+![rclpy](https://img.shields.io/badge/rclpy-3776AB?style=flat-square&logo=python&logoColor=white)
+![micro-ROS](https://img.shields.io/badge/micro--ROS-Embedded-8E24AA?style=flat-square)
 
 **AI and Machine Learning**  
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
@@ -52,6 +66,21 @@ I'm looking for a **paid research or thesis position** in healthcare AI, medical
 ---
 
 ### 📂 Projects
+
+**🤖 [MediSense-Rover: An Autonomous Monitoring and Response Robot](https://github.com/ramyasp64/MediSense-Rover)**  
+*Independent research · ROS 2 Jazzy · 2026*
+
+A monitoring model is only useful if someone acts on what it notices. This robot closes that loop. It maps a four-bed ward with SLAM, localises itself with AMCL, and when a patient's waveform produces a sustained red alert it plans a path and drives to that bedside on its own.
+
+Built simulation-first with no hardware purchased — the same constraint the intended deployment has. It carries the MediSense model unmodified, mounted read-only, and adds the perception → decision → action loop around it.
+
+Measured, not asserted: **0.17 m** arrival accuracy against ground truth, **16 s** from alert to bedside, **zero** recovery behaviours. SLAM closes a full ward lap to **1 mm / 25 mm**. Inference runs at **p99 61–70 ms** against a 100 ms budget, on **16,530 parameters and 64.6 KiB of weights**, occupying **0.05% of one core**.
+
+Two independent detectors run side by side and the more severe wins — a learned autoencoder for equipment faults, and clinical vital-sign rules that cannot miss a heart rate of 163. Every alert records which one fired, so the decision stays auditable rather than magic. The README states plainly which detector is currently weak and why.
+
+`ROS 2 Jazzy` · `Gazebo Harmonic` · `Nav2` · `slam_toolbox` · `TF2` · `URDF/SDF` · `rclpy` · `PyTorch` · `Docker`
+
+---
 
 **🩺 [MediSense: Vital Signs Monitoring via Transfer Learning](https://github.com/ramyasp64/MediSense)**  
 *Independent research · 2025 onwards*

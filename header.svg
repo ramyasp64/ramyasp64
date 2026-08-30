@@ -1,0 +1,89 @@
+<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#023e8a"/>
+      <stop offset="40%"  stop-color="#0096c7"/>
+      <stop offset="80%"  stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#48cae4"/>
+    </linearGradient>
+    <linearGradient id="ecgGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#00ff9f" stop-opacity="0.4"/>
+      <stop offset="50%"  stop-color="#00ff9f" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00ff9f" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="url(#bg)"/>
+
+  <!-- Subtle grid (hospital monitor feel) -->
+  <g stroke="#ffffff" stroke-width="0.3" opacity="0.08">
+    <line x1="0" y1="40"  x2="900" y2="40"/>
+    <line x1="0" y1="80"  x2="900" y2="80"/>
+    <line x1="0" y1="120" x2="900" y2="120"/>
+    <line x1="0" y1="160" x2="900" y2="160"/>
+    <line x1="150" y1="0" x2="150" y2="200"/>
+    <line x1="300" y1="0" x2="300" y2="200"/>
+    <line x1="450" y1="0" x2="450" y2="200"/>
+    <line x1="600" y1="0" x2="600" y2="200"/>
+    <line x1="750" y1="0" x2="750" y2="200"/>
+  </g>
+
+  <!-- ECG glow (thick, blurred) -->
+  <path d="M 0,160 L 60,160 L 65,155 L 75,150 L 85,155 L 90,160 L 120,160 L 125,168 L 130,108 L 135,168 L 140,160 L 170,160 L 180,148 L 195,145 L 210,148 L 225,160 L 300,160 L 360,160 L 365,155 L 375,150 L 385,155 L 390,160 L 420,160 L 425,168 L 430,108 L 435,168 L 440,160 L 470,160 L 480,148 L 495,145 L 510,148 L 525,160 L 600,160 L 660,160 L 665,155 L 675,150 L 685,155 L 690,160 L 720,160 L 725,168 L 730,108 L 735,168 L 740,160 L 770,160 L 780,148 L 795,145 L 810,148 L 825,160 L 900,160"
+    fill="none" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+    opacity="0.25" filter="url(#softglow)"/>
+
+  <!-- ECG line (sharp, bright) -->
+  <path d="M 0,160 L 60,160 L 65,155 L 75,150 L 85,155 L 90,160 L 120,160 L 125,168 L 130,108 L 135,168 L 140,160 L 170,160 L 180,148 L 195,145 L 210,148 L 225,160 L 300,160 L 360,160 L 365,155 L 375,150 L 385,155 L 390,160 L 420,160 L 425,168 L 430,108 L 435,168 L 440,160 L 470,160 L 480,148 L 495,145 L 510,148 L 525,160 L 600,160 L 660,160 L 665,155 L 675,150 L 685,155 L 690,160 L 720,160 L 725,168 L 730,108 L 735,168 L 740,160 L 770,160 L 780,148 L 795,145 L 810,148 L 825,160 L 900,160"
+    fill="none" stroke="#00ff9f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#glow)"/>
+
+  <!-- Small pulse dot at last R spike -->
+  <circle cx="730" cy="108" r="4" fill="#00ff9f" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Name text -->
+  <text x="450" y="58"
+    text-anchor="middle"
+    fill="#ffffff"
+    font-size="28"
+    font-weight="bold"
+    font-family="Segoe UI, Arial, Helvetica, sans-serif"
+    letter-spacing="0.8">
+    Ramya Subramanian Porselva Bharathi
+  </text>
+
+  <!-- Tagline -->
+  <text x="450" y="90"
+    text-anchor="middle"
+    fill="#caf0f8"
+    font-size="15"
+    font-family="Segoe UI, Arial, Helvetica, sans-serif"
+    letter-spacing="0.3">
+    Building AI for the patients who need it most
+  </text>
+
+  <!-- Small label bottom left -->
+  <text x="18" y="185"
+    fill="#caf0f8"
+    font-size="9"
+    font-family="monospace"
+    opacity="0.55"
+    letter-spacing="1">
+    VITAL SIGNS · HEALTHCARE AI · SIGNAL PROCESSING
+  </text>
+</svg>
