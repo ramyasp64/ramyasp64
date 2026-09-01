@@ -212,8 +212,6 @@ First-Class Distinction · CGPA 8.65/10 · Published research · Presented at IC
 
 ---
 
-*Vital signs monitoring for low-resource settings is not just possible. It is achievable.*
-
 *Exploring the intersection of AI, robotics, and accessible healthcare.*
 
 ![footer](https://raw.githubusercontent.com/ramyasp64/ramyasp64/main/footer.svg)
