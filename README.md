@@ -115,7 +115,7 @@ Built a fully automated pipeline for aligning 3D scan data against CAD reference
 **🗑 [Waste Classifier API](https://github.com/ramyasp64/waste-classifier-api)**  
 *Production ML API · Completed Jun 2025*
 
-End-to-end ML project from data to deployed Kubernetes service. The goal was to go all the way through, not just train a model.
+End-to-end ML project from data to a deployed Kubernetes service. I wanted to take one model the whole distance, training through to serving, instead of stopping at a notebook.
 
 - 6-class CNN (3 Conv2D + MaxPooling layers), trained on Kaggle Garbage Classification dataset with 80/20 split, 30 epochs, batch size 32
 - ~90% validation accuracy with Adam optimizer and categorical cross-entropy loss
@@ -213,5 +213,7 @@ First-Class Distinction · CGPA 8.65/10 · Published research · Presented at IC
 ---
 
 *Vital signs monitoring for low-resource settings is not just possible. It is achievable.*
+
+*Exploring the intersection of AI, robotics, and accessible healthcare.*
 
 ![footer](https://raw.githubusercontent.com/ramyasp64/ramyasp64/main/footer.svg)
